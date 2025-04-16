@@ -35,19 +35,43 @@ public class Main {
 // Четвертая задача
         int deliveryDistance = 95;
         int day = 1;
-        if (deliveryDistance <= 20) {
-            System.out.println("Доставка займет " + day + " сутки");
-        }
-        if (deliveryDistance > 20 && deliveryDistance <= 60) {
-            day = day + 1;
-            System.out.println("Доставка займет " + day + " суток");
-        } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
-            day = day + 2;
-            System.out.println("Доставка займет " + day + " суток");
-        } else {
+        if (deliveryDistance > 100) {
             System.out.println("Доставка свыше 100км не осуществялется");
-        }
-// Четвертая задача
+        }   if (deliveryDistance > 60 && deliveryDistance <= 100) {
+                day = day + 2;
+                System.out.println("Доставка займет " + day + " суток");
+            } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
+                day =day + 1;
+                System.out.println("Доставка займет " + day + " суток");
+            } else {
+            System.out.println("Доствка займет " + day + " суток");
 
+        }
+// Пятая задача
+        int monthNumber = 7;
+        switch (monthNumber) {
+            case 1:
+            case 2:
+            case 12:
+                System.out.println("Зима");
+                break;
+            case 3:
+            case 4:
+            case 5:
+                System.out.println("Весна");
+                break;
+            case 6:
+            case 7:
+            case 8:
+                System.out.println("Лето");
+                break;
+            case 9:
+            case 10:
+            case 11:
+                System.out.println("Осень");
+                break;
+            default:
+                System.out.println("Такого месяца нет");
+        }
     }
 }
