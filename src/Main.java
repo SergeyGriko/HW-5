@@ -6,35 +6,34 @@ public class Main {
         int clientOS = 0;
         if (clientOS == 1) {
             System.out.println("Установите версию приложения для Android по ссылке");
-        } else
+        } else {
             System.out.println("Установите версию приложения для iOS по ссылке");
+        }
 // Вторая задача
         System.out.println("Вторая задача:");
         int clientDeviceYear = 2015;
-        if (clientOS == 1) {
-            if (clientDeviceYear < 2015) {
-                System.out.println("Установите облегченную версию приложения для Android по ссылке");
-            } else {
-                System.out.println("Установите последнюю версию приложения для Android по ссылке");
-            }
-        } else if (clientOS == 0) {
-            if (clientDeviceYear < 2015) {
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-            } else {
-                System.out.println("Установите последнюю версию приложения для iOS по ссылке");
-            }
+        int clientOS = 1;
+
+        boolean isOldDevice = clientDeviceYear < 2015;
+
+        if (clientOS == 1 && isOldDevice) {
+            System.out.println("Установите облегченную версию приложения для Android по ссылке");
+        } else if (clientOS == 1 && !isOldDevice) {
+            System.out.println("Установите последнюю версию приложения для Android по ссылке");
+        } else if (clientOS == 0 && isOldDevice) {
+            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+        } else if (clientOS == 0 && !isOldDevice) {
+            System.out.println("Установите последнюю версию приложения для iOS по ссылке");
+
 // Третья задача
-            System.out.println("Третья задача:");
-        int year = 2021;
-        if (year >= 1584) {
-            if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+            int year = 2021;
+            if (year < 1584) {
+                System.out.println("В " + year + " году ещё не придумали високосный год");
+            } else if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
                 System.out.println(year + " год является високосным");
             } else {
                 System.out.println(year + " год не является високосным");
             }
-        } else {
-            System.out.println("В " + year + " году ещё не придумали високосный год");
-        }
 // Четвертая задача
             System.out.println("Четвертая задача:");
         int deliveryDistance = 95;
